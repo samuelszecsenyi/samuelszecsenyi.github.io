@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> New York AIrbnb Listing Price Prediction</title>
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.ico')}}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                
+                <a class="navbar-brand" href="#page-top" style="font-family:'Georgia'">New York AIrbnb Listing Price Prediction</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about" >About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Visualizations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Machine Learning</a></li>
+                        <li class="nav-item"><a class = "nav-link" href="#Conclusion">Conclusion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Blurred Futures</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <!--header class="bg-primary bg-gradient text-white"-->
+            <div class="container px-4 text-center">
+       <header class="d-flex align-items-center cheatsheet">
+            <div class="container px-4 px-lg-5 text-center">
+                <br>
+                <br>
+                <h1 class="fw-light text-black" style="font-family:'Georgia'">New York AIrbnb Listing Price Prediction</h1>
+                <p class="fw-light text-white" class="lead" >A data science project by AI Camp students</p>
+                <a class="btn btn-lg btn-light" href="#about">See our work below</a>
+            </div>
+        </header>
+               
+            </div>
+        <!--/header-->
+        <!-- About section-->
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 style="font-family:'Georgia'" >What Does This Project Do?
+                        </h2>
+                        <p class="lead">In our dataset, there is information on neighborhood, neighborhood group, room type, minimum number of days, and more that correlate with each other in intriguing ways. Our goal is to predict the price of an Airbnb listing in New York City, which will be measured in US dollars. </p>
+                      
+                      
+                      
+                      <h2 style="font-family:'Georgia'">Why This Project?
+                        </h2> <p class="lead"> Currently, it is very popular to place a property on the Airbnb market to make some extra cash and even have a career if one owns a very nice property. Given this trend, we were inspired to create a machine learning model that can help potential hosts and tourists alike. It can help potential hosts decide whether it would be profitable to place their property on the market given its location, room type, and more. As for the tourists, they can use our model to verify that the renting price is reasonable. Another final justification was that this was a viable data set, large enough for us to ensure reasonably accurate results, but not so large that our computers could still handle it without crashing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services section-->
+        <section class="bg-light" id="services">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                    <h1 id="top-level-heading" style="font-family:'Georgia'">Visualizations</h1><br/>
+                    </div>
+                    <div class="col-lg-8">
+                        <h3 style="font-family:'Georgia'"Visualization of Crucial Features</h3>
+                      <h3 style="font-family:'Georgia'">Scatterplot: Review and Price</h3>
+                        <p class="lead">The majority of prices and reviews is under $1000 and less than 75 reviews. The Bronx (orange) has the cheapest listings while Manhattan (red) has the most expensive listings. As for the other boroughs, Staten Island (purple), Queens (green), and Brooklyn (blue) had increasing number of reviews and prices in that order. </p>
+                    <iframe width="800" height="800" title="Correlation Table of Features" src='reviews-price-scatter.html'></iframe> <br>
+                    </div>
+                    <div class="col-lg-8">
+                       <h3 style="font-family:'Georgia'">Scatterplot: Availability and Price</h3>
+                        <p class="lead">Initially, we thought that availability would have a distinct effect on the price because of seasonal demand. However, we were wrong. In this scatter plot, we can see that it does not matter how available the listing is as it does not affect the price. This graph also reaffirms that the most expensive listings are in Manhattan while the cheapest listings are in the Bronx.</p>
+                    <iframe width="800" height="800" title="Correlation Table of Features" src="availability-price-scatter.html"></iframe> <br>
+                    </div>
+                    <div class="col-lg-8">
+                      <h3 style="font-family:'Georgia'">Heatmap of All Variables in the Dataset</h3>
+                        <p class="lead">For the most part, there were very negative correlations between the variables as seen by price and longitude and somewhat negative correlations between the variables as seen by availability and calculated host listings. There was a slightly positive correlation between reviews per month and number of reviews.</p>
+                    <iframe width="450" height="450" title="Density of Listings in New York" src="assets/img/NEW_actual_heatmap.png" id="Iframe"></iframe>
+                         <script>
+        // Selecting the iframe element
+        var frame = document.getElementById("Iframe");
+          
+        // Adjusting the iframe height onload event
+        frame.onload = function()
+        // function execute while load the iframe
+        {
+          // set the height of the iframe as 
+          // the height of the iframe content
+          frame.style.height = 
+          frame.contentWindow.document.body.scrollHeight + 'px';
+           
+  
+         // set the width of the iframe as the 
+         // width of the iframe content
+         frame.style.width  = 
+          frame.contentWindow.document.body.scrollWidth+'px';
+              
+        }
+        </script>
+                      
+                      
+                      <br>
+                    </div><sub></sub><sub></sub><sub></sub>
+                    <div class="col-lg-8">
+                    </div>
+                    <div class="col-lg-8">
+                        <h3 style="font-family:'Georgia'"Visualization of Crucial Features </h3>
+                      <h3 style="font-family:'Georgia'">Box Plot of New York Boroughs and Price</h3> #Need to change axis titles
+                        <p class="lead">This graph shows the minimum, maximum, and median prices of a listing in each of the boroughs. Overall, all of these box plots are top skewed. The median is typically between 65 and 141 for the different boroughs. The medians further confirm that Manhattan is typically the most expensive borough as opposed to the Bronx being the cheapest borough. There are also apparent outliers for all of the boroughs that would matter for the machine learning models.</p>
+                    <iframe width="800" height="800" title="Correlation Table of Features" src='box-plot-neighbourhood-price.html'></iframe> <br>
+                    </div>
+                    <div class="col-lg-8">
+                        <h3 style="font-family:'Georgia'">Bar Chart of Room Type and Median Price</h3>
+                        <p class="lead">The highest median listing price is the "Entire home/apt" at $160. The second highest median listing price is "Single" private rooms at $70. The lowest median listing price is the "Shared Room" at $45. This shows that when renting an entire home/apt, you will be paying more than you would be for the single or shared rooms</p>
+                        <iframe width="800" height="800" title="Scatterplots of features in relation to GDP" src='room-type-histogram.html'></iframe> <br><br>
+                    </div>
+                    <div class="col-lg-8">
+                        <h3 style="font-family:'Georgia'"Visualization of Crucial Features</h3>
+                        <p class="lead">We isolated the above features that we saw as most important and turned them into their own visualizations so that we can see how these crucial features affect the price of an Airbnb listing in New York City.</p></div>
+                    <div class="col-lg-8">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact section-->
+        <section id="contact">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 style="font-family:'Georgia'">Machine Learning</h1> </br>
+                    </div>
+                    <div class="col-lg-8">
+                      <h2>Linear Regression: Explanation<h2>
+                        <p class="lead">First, we want to try a baseline linear regression. Linear regression assumes that all features have a linear relation with price of an Airbnb in New York City, so we can fit a line of best fit to predict future values.</p>
+                        <img src="assets/img/LinearExplanation.png" class="page-image" />
+                    </div>
+
+                    <div class="col-lg-8">
+                        <h2>Linear Regression: Results</h2>
+                        <p class="lead">Here, we have a confusion matrix with the results of the linear regression applied to our testing dataset. A confusion matrix for a classification problem tells us the number of correct and incorrect predictions for every class. (Further explanation of what a confusion matrix is?)</p>
+                        <iframe width="500" height="500" title="Linear Regression Confusion Matrix" src='LinearRegressionCF.html'></iframe>  
+                        <p class="lead">(JULIAN AND AIDAN, EXPLANATIONS HERE</p>
+                    </div>
+                    <div class="col-lg-8">
+                        <h2>Neural Networks: Explanation</h2>
+                        <p class="lead">Neural networks are one of the most powerful machine learning approaches for data with complicated patterns but are more prone to overfitting to simple data.(MIGHT NOT USE NEURAL NETWORKS?)</p>
+                        <img src="assets/img/nn_explanation.png" class="page-image" width="500"/>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <h2>Neutral Networks: Results</h2>
+                        <p class="lead">Looking at the confusion matrix below, the neural network performed much better on (blah blah)/p>
+                        <iframe width="500" height="500" title="Neural Network Confusion Matrix" src='NeuralNetworkCF_matrix.html'></iframe>
+                        <p class="lead">For total accuracy, the NN performed at (NUMBERS AND CALCULATIONS)</p>
+                    </div><sub></sub>
+                    <div class="col-lg-8">
+                        <h2>K Nearest Neighbors: Explanation</h2>
+                        <p class="lead">K Nearest Neighbors looks at data points in the testing set and infers the classification based on similarity to other points of the same class in the training set.(Are we using this model?)</p>
+                        <img src="assets/img/knn_explanation.jpeg" class="page-image" width="500"/>
+                    </div>
+                    <div class="col-lg-8">
+                        <h2>K Nearest Neighbors: Results </h2>
+                        <p class="lead">Looking at our confusion matrix below, K Nearest Neighbors performed well on very wealthy and very poor nations.(Explanations) </p>
+                        <iframe width="500" height="500" title="KNN Confusion Matrix" src='KNN_CF_matrix.html'></iframe>  
+                        <p class="lead" style="font-family:'Georgia'">Calculations)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-light" id="Conclusion">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                    <h1 id="top-level-heading", style="font-family:'Georgia'">Conclusion</h1><br/>
+                    </div>
+                    <div class="col-lg-8">
+
+                        <p class="lead">In conclusion, (what computer modeling program we used) clearly performed the best on our dataset for predicting GDP per capita. Positively correlated features like x and y along with negatively correlated features like z and zz helped us achieve these results. </p>
+
+                        <h3 style="font-family:'Georgia'">So what?</h3>
+                            
+                        <p class="lead">So what is the significance of our project? Because we know which features are most correlated with a (sdsdfs), we can identify both the factors that lead to (kjhkjhkjhkk) and also predict and then invest in (sdfskjdhkfan). </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-left: 80px; margin-right: 80px;" id="team">
+        <header class="bg-primary text-center py-5 mb-4">
+            <div class="container px-4">
+              <h1 class="fw-light text-dodgerblue", style="font-family:'Georgia'">The New York AIrbnb Team</h1>
+              <h2 class="fw-light text-dodgerblue", style="font-family:'Georgia'">Blurred Futures</h2>
+            </div>
+          </header>
+          
+          <!-- Page Content -->
+          <div class="container px-4">
+            <div class="row">
+              <!-- Team Member 1 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="assets/img/trisha.png" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Trisha Bhanot</h5>
+                    <div class="card-text text-black-50">Pro Milkshake Drinker</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 2 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="assets/img/xaria2.png" height="330" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Xaria Peralta</h5>
+                    <div class="card-text text-black-50">Obligated Orangutan</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 3 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="assets/img/images:julien_img.png" height="350" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Julian Burke</h5>
+                    <div class="card-text text-black-50" style="font-family:'Georgia'">Valorant Enjoyer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 4 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="assets/img/images:sam_img.png" height="350" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Samuel Szecsenyi</h5>
+                    <div class="card-text text-black-50">Blonde (But Only in the Summer)</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 5 -->
+              <div class="col-xl-christina col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="assets/img/christina.png" width=250" height="350" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Christina Hwang</h5>
+                    <div class="card-text text-black-50" style="font-family:'Georgia'">Tired Pinecone</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 6 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="assets/img/aiden.png" height="350" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Aidan Scharine</h5>
+                    <div class="card-text text-black-50" style="font-family:'Georgia'">Garfield Enthusiast</div>
+                  </div>
+                </div>
+              </div>
+            <!-- /.row -->
+          </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; AI Camp 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/static/js/scripts.js"></script>
+    </body>
+</html>
+2>

@@ -68,6 +68,11 @@
                     <h1 id="top-level-heading" style="font-family:'Georgia'">Visualizations</h1><br/>
                     </div>
                     <div class="col-lg-8">
+                        <h2>Minimum Nights vs. Number of Reviews</h2>
+                        <p class="lead">Another colilation we have found is that the number of reviews decreases with the increase in minimum nights. This shows that the longer the required minimum nights in an AirBnb the fewer reviews it will recieve. Most people want to rent an AirBnb with lots of reviews to ensure the quality of the house and it is a good insight to know that a lower number of reviews is acceptable if the minimum number of nights is higher.</p>
+                        <iframe width="800" height="1000" src="mn_vs_nr.html" class="page-image"/>
+                    </div>
+                    <div class="col-lg-8">
                         <h3 style="font-family:'Georgia'"Visualization of Crucial Features</h3>
                       <h3 style="font-family:'Georgia'">Scatterplot: Review and Price</h3>
                         <p class="lead">The majority of prices and reviews is under $1000 and less than 75 reviews. The Bronx (orange) has the cheapest listings while Manhattan (red) has the most expensive listings. As for the other boroughs, Staten Island (purple), Queens (green), and Brooklyn (blue) had increasing number of reviews and prices in that order. </p>
@@ -88,7 +93,7 @@
                     <div class="col-lg-8">
                       <h3 style="font-family:'Georgia'">Heatmap of All Variables in the Dataset</h3>
                         <p class="lead">For the most part, there were very negative correlations between the variables as seen by price and longitude and somewhat negative correlations between the variables as seen by availability and calculated host listings. There was a slightly positive correlation between reviews per month and number of reviews.</p>
-                    <iframe width="450" height="450" title="Density of Listings in New York" src="assets/img/NEW_actual_heatmap.png" id="Iframe"></iframe>
+                    <iframe width="450" height="450" title="Density of Listings in New York" src="correlation_plot (1).html" id="Iframe"></iframe>
                          <script>
         // Selecting the iframe element
         var frame = document.getElementById("Iframe");
@@ -118,9 +123,9 @@
                     </div>
                     <div class="col-lg-8">
                         <h3 style="font-family:'Georgia'"Visualization of Crucial Features </h3>
-                      <h3 style="font-family:'Georgia'">Box Plot of New York Boroughs and Price</h3> #Need to change axis titles
+                      <h3 style="font-family:'Georgia'">Box Plot of New York Boroughs and Price</h3> 
                         <p class="lead">This graph shows the minimum, maximum, and median prices of a listing in each of the boroughs. Overall, all of these box plots are top skewed. The median is typically between 65 and 141 for the different boroughs. The medians further confirm that Manhattan is typically the most expensive borough as opposed to the Bronx being the cheapest borough. There are also apparent outliers for all of the boroughs that would matter for the machine learning models.</p>
-                    <iframe width="800" height="800" title="Correlation Table of Features" src='box-plot-neighbourhood-price.html'></iframe> <br>
+                    <iframe width="800" height="800" title="Neighbourhood and Price Box Plot" src='updated_box_plot.html'></iframe> <br>
                     </div>
                     <div class="col-lg-8">
                         <h3 style="font-family:'Georgia'">Bar Chart of Room Type and Median Price</h3>
@@ -143,16 +148,20 @@
                         <h1 style="font-family:'Georgia'">Machine Learning</h1> </br>
                     </div>
                     <div class="col-lg-8">
+
                       <h2>Linear Regression: Results and Explanation<h2>
                         <p class="lead">First, we tried a baseline linear regression model. This model basically uses a line to predict the price of the Airbnb. Linear regression assumes that all features have a linear relation with price of an Airbnb in New York City, so we can fit a line of best fit to predict future values. After testing the model with our dataset, we got a root mean square error of 74 which isn't great as most of our values got to around 40 and the higher the RMSE is, the worse it is. However, it's still not terrible.</p>
                         <img src="assets/img/LinearRImage.png" class="page-image" />
                     </div>
+
                     <div class="col-lg-8">
                         <h2>K Nearest Neighbors: Results and Explanation</h2>
-                        <p class="lead">K Nearest Neighbors looks at data points in the testing set and infers the classification based on similarity to other points of the same class in the training set.(Are we using this model?)</p>
+                        <p class="lead">The next model we used was K Nearest Neighbors. The KNN machine learning algorithm looks at data points in the testing set and predicts a price based on its similarity to other data points in the testing set. The model creates groups of similar data points and matches the input variables to one of those groups. Our model created thousands of groups out of our 43,000 data points and has an RMSE value of 43.212.
+</p>
                         <img src="assets/img/KNN.jpg" class="page-image" width="500"/>
                     </div>
-                    <div class="col-lg-8">
+                    
+
                       <h2>Random Forest Regression: Results and  Explanation<h2>
                         <p class="lead">The Random Forest Regression model uses multiple decision trees with random decisions to create outputs and trains itself on which ones work. The RMSE we got from the model was 43.8 which is pretty good but not the best we got from any of the models.</p>
                         <img src="assets/img/RandomForestR.png" class="page-image" />
@@ -161,6 +170,18 @@
                       <h2>LightGBM: Results and  Explanation<h2>
                         <p class="lead">The Light Gradient Boosting Machine model also known as LightBGM, is very similar to the random forest regression model except it uses the outputs of its trees for inputs of other trees. Its RMSE was 44 which isn't terrible, but we had better RMSEs from other models.</p>
                         <img src="assets/img/Light GBM.png" class="page-image" />
+                        <div class="col-lg-8">
+                        <h2>Stacking</h2>
+                        <p class="lead">Stacking is a model in which a single model is used to learn how to combine predictions from contributing models to create a linear regression. We chose this model because the RMSE value of 41.595 was lower than others, and therefore more accurate.</p>
+                        <iframe width="1000" height="700" title="Stacking" src='assets/img/Stacking2.jpg'></iframe>
+                    </div><sub></sub>
+                    <div class="col-lg-8">
+                        <h3 style="font-family:'Georgia'"Plotting the Principal Components</h3>
+                      <h3 style="font-family:'Georgia'">3D Plot of Principal Components</h3>
+                        <p class="lead">We reduced the number of colums we had while keeping 98.22% of the varience by using Principal Components Analysis. PCA is used to combat the issues of high-dimensional data by way of Dimensionality reduction. Essentially PCA helps to find patterns in the high-dimensional datasets. We made a 3D graph to show the reduced 3 columns in 3 principle components. We would be able to use the new data in a new model to see if the accuracy increased or decreased. </p>
+                    <iframe width="800" height="800" title="PCA Visualization" src='pca_visualization.html'></iframe> <br>
+                    </div>
+
                     </div>
                 </div>
             </div>
@@ -173,11 +194,11 @@
                     </div>
                     <div class="col-lg-8">
 
-                        <p class="lead">In conclusion, (what computer modeling program we used) clearly performed the best on our dataset for predicting GDP per capita. Positively correlated features like x and y along with negatively correlated features like z and zz helped us achieve these results. </p>
+                        <p class="lead">In conclusion, Stacking performed the best on our dataset for predicting the price of an AirBnb in New York. Positively correlated features like number of reviews per month and neighborhoods closer to Manhattan along with negatively correlated features like minimum number of days helped us achieve these results. </p>
 
                         <h3 style="font-family:'Georgia'">So what?</h3>
                             
-                        <p class="lead">So what is the significance of our project? Because we know which features are most correlated with a (sdsdfs), we can identify both the factors that lead to (kjhkjhkjhkk) and also predict and then invest in (sdfskjdhkfan). </p>
+                        <p class="lead">So what is the significance of our project? Because we know which features are most correlated with price, we can identify both the factors that lead to a higher priced AirBnb and also predict what it would cost to stay in an AirBnb in New York. </p>
                     </div>
                 </div>
             </div>

@@ -67,22 +67,26 @@
                     <div class="col-lg-8">
                     <h1 id="top-level-heading" style="font-family:'Georgia'">Visualizations</h1><br/>
                     </div>
+                    
                     <div class="col-lg-8">
                         <h2>Minimum Nights vs. Number of Reviews</h2>
                         <p class="lead">Another correlation we have found is that the number of reviews decreases with the increase in minimum nights. This shows that the longer the required minimum nights in an Airbnb, the fewer reviews it will recieve. Most people want to rent an Airbnb with lots of reviews to ensure the quality of the house and it is a good insight to know that a lower number of reviews is acceptable if the minimum number of nights is higher.</p>
                         <iframe width="800" height="1000" src="mn_vs_nr.html" class="page-image"/>
                     </div>
+
                     <div class="col-lg-8">
-                        
-                      <h3 style="font-family:'Georgia'">Scatterplot: Number of Reviews and Price</h3>
-                        <p class="lead">The majority of prices and reviews is under $1000 and less than 75 reviews. The Bronx (orange) has the cheapest listings while Manhattan (red) has the most expensive listings. As for the other boroughs, Staten Island (purple), Queens (green), and Brooklyn (blue) had increasing number of reviews and prices in that order. </p>
-                    <iframe width="800" height="800" title="Correlation Table of Features" src='reviews-price-scatter.html' class="page-image"></iframe> 
+                        <h3 style="font-family:'Georgia'"Visualization of Crucial Features</h3>
+                        <h3 style="font-family:'Georgia'">Scatterplot: Number of Reviews and Price</h3>
+                        <p class="lead"> The majority of prices and reviews is under $1000 and less than 75 reviews. The Bronx (orange) has the cheapest listings while Manhattan (red) has the most expensive listings. As for the other boroughs, Staten Island (purple), Queens (green), and Brooklyn (blue) had increasing number of reviews and prices in that order. </p><br>
+                        <iframe width="800" height="800" title="Correlation Table of Features" src='nor_vs_price.html'></iframe> <br>
                     </div>
+                    
                     <div class="col-lg-8">
                        <h3 style="font-family:'Georgia'">Scatterplot: Availability and Price</h3>
                         <p class="lead">Initially, we thought that availability would have a distinct effect on the price because of seasonal demand. However, we were wrong. In this scatter plot, we can see that it does not matter how available the listing is as it does not affect the price. This graph also reaffirms that the most expensive listings are in Manhattan while the cheapest listings are in the Bronx.</p>
                     <iframe width="800" height="800" title="Correlation Table of Features" src="availability-price-scatter.html"></iframe> <br>
                     </div>
+                    
                     <div class="col-lg-8">
                         <h3 style="font-family:'Georgia'"Visualization of Crucial Features</h3>
                       <h3 style="font-family:'Georgia'">Violin Plot: Borough and Price</h3>
@@ -90,6 +94,7 @@
                         <p class="lead"> Manhattan (red) had the highest median price ($141) and its $45-141 range had the most distributed values. Brooklyn (blue) had the second highest median price ($90) and the most distributed values were in the range of $25-90, the widest of all the boroughs. Staten Island (purple) and Queens (green) had the same median price ($75) and same range for the most distributed values ($48-75) but differed slightly in its maximum prices. Lastly, the Bronx (orange) had the lowest median price ($65) and most of its distributed values were in the range of $40-65. </p>
                     <iframe width="800" height="800" title="Correlation Table of Features" src='violin_plot.html'></iframe> <br>
                     </div>
+                    
                     <div class="col-lg-8">
                       <h3 style="font-family:'Georgia'">Heatmap of All Variables in the Dataset</h3>
                         <p class="lead">For the most part, there were very negative correlations between the variables as seen by price and longitude and somewhat negative correlations between the variables as seen by availability and calculated host listings. There was a slightly positive correlation between reviews per month and number of reviews.</p>
@@ -121,17 +126,20 @@
                     </div><sub></sub><sub></sub><sub></sub>
                     <div class="col-lg-8">
                     </div>
+                    
                     <div class="col-lg-8">
                         <h3 style="font-family:'Georgia'"Visualization of Crucial Features </h3>
                       <h3 style="font-family:'Georgia'">Box Plot of New York Boroughs and Price</h3> 
                         <p class="lead">This graph shows the minimum, maximum, and median prices of a listing in each of the boroughs. Overall, all of these box plots are top skewed. The median is typically between 65 and 141 for the different boroughs. The medians further confirm that Manhattan is typically the most expensive borough as opposed to the Bronx being the cheapest borough. There are also apparent outliers for all of the boroughs that would matter for the machine learning models.</p>
                     <iframe width="800" height="800" title="Neighbourhood and Price Box Plot" src='updated_box_plot.html'></iframe> <br>
                     </div>
+                    
                     <div class="col-lg-8">
                         <h3 style="font-family:'Georgia'">Bar Chart of Room Type and Median Price</h3>
                         <p class="lead">The highest median listing price is the "Entire home/apt" at $160. The second highest median listing price is "Single" private rooms at $70. The lowest median listing price is the "Shared Room" at $45. This shows that when renting an entire home/apt, you will be paying more than you would be for the single or shared rooms</p>
                         <iframe width="800" height="800" title="Scatterplots of features in relation to GDP" src='room-type-histogram.html'></iframe> <br><br>
                     </div>
+                    
                     <div class="col-lg-8">
                         <h3 style="font-family:'Georgia'"Visualization of Crucial Features</h3>
                         <p class="lead">We isolated the above features that we saw as most important and turned them into their own visualizations so that we can see how these crucial features affect the price of an Airbnb listing in New York City.</p></div>

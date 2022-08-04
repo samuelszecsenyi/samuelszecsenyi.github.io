@@ -79,6 +79,13 @@
                     <iframe width="800" height="800" title="Correlation Table of Features" src="availability-price-scatter.html"></iframe> <br>
                     </div>
                     <div class="col-lg-8">
+                        <h3 style="font-family:'Georgia'"Visualization of Crucial Features</h3>
+                      <h3 style="font-family:'Georgia'">Violin Plot: Borough and Price</h3>
+                        <p class="lead"> A violin plot is used to visualize the distribution of data. The width of it relates to the frequency of data points in that region. For example, Manhattan (red) has a very narrow violin shape, indicating that there are not many listings with the price of the median ($141). </p><br>
+                        <p class="lead"> Manhattan (red) had the highest median price ($141) and its $45-141 range had the most distributed values. Brooklyn (blue) had the second highest median price ($90) and the most distributed values were in the range of $25-90, the widest of all the boroughs. Staten Island (purple) and Queens (green) had the same median price ($75) and same range for the most distributed values ($48-75) but differed slightly in its maximum prices. Lastly, the Bronx (orange) had the lowest median price ($65) and most of its distributed values were in the range of $40-65. </p>
+                    <iframe width="800" height="800" title="Correlation Table of Features" src='violin_plot.html'></iframe> <br>
+                    </div>
+                    <div class="col-lg-8">
                       <h3 style="font-family:'Georgia'">Heatmap of All Variables in the Dataset</h3>
                         <p class="lead">For the most part, there were very negative correlations between the variables as seen by price and longitude and somewhat negative correlations between the variables as seen by availability and calculated host listings. There was a slightly positive correlation between reviews per month and number of reviews.</p>
                     <iframe width="450" height="450" title="Density of Listings in New York" src="assets/img/NEW_actual_heatmap.png" id="Iframe"></iframe>
@@ -136,39 +143,24 @@
                         <h1 style="font-family:'Georgia'">Machine Learning</h1> </br>
                     </div>
                     <div class="col-lg-8">
-                      <h2>Linear Regression: Results and  Explanation<h2>
-                        <p class="lead">First, we want to try a baseline linear regression. Linear regression assumes that all features have a linear relation with price of an Airbnb in New York City, so we can fit a line of best fit to predict future values.</p>
-                        <img src="assets/img/LinearExplanation.png" class="page-image" />
+                      <h2>Linear Regression: Results and Explanation<h2>
+                        <p class="lead">First, we tried a baseline linear regression model. This model basically uses a line to predict the price of the Airbnb. Linear regression assumes that all features have a linear relation with price of an Airbnb in New York City, so we can fit a line of best fit to predict future values. After testing the model with our dataset, we got a root mean square error of 74 which isn't great as most of our values got to around 40 and the higher the RMSE is, the worse it is. However, it's still not terrible.</p>
+                        <img src="assets/img/LinearRImage.png" class="page-image" />
                     </div>
-
-                    <div class="col-lg-8">
-                        <h2>Linear Regression: Results</h2>
-                        <p class="lead">Here, we have a confusion matrix with the results of the linear regression applied to our testing dataset. A confusion matrix for a classification problem tells us the number of correct and incorrect predictions for every class. (Further explanation of what a confusion matrix is?)</p>
-                        <iframe width="500" height="500" title="Linear Regression Confusion Matrix" src='LinearRegressionCF.html'></iframe>  
-                        <p class="lead">(JULIAN AND AIDAN, EXPLANATIONS HERE</p>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>Neural Networks: Explanation</h2>
-                        <p class="lead">Neural networks are one of the most powerful machine learning approaches for data with complicated patterns but are more prone to overfitting to simple data.(MIGHT NOT USE NEURAL NETWORKS?)</p>
-                        <img src="assets/img/nn_explanation.png" class="page-image" width="500"/>
-                    </div>
-
-                    <div class="col-lg-8">
-                        <h2>Neutral Networks: Results</h2>
-                        <p class="lead">Looking at the confusion matrix below, the neural network performed much better on (blah blah)/p>
-                        <iframe width="500" height="500" title="Neural Network Confusion Matrix" src='NeuralNetworkCF_matrix.html'></iframe>
-                        <p class="lead">For total accuracy, the NN performed at (NUMBERS AND CALCULATIONS)</p>
-                    </div><sub></sub>
                     <div class="col-lg-8">
                         <h2>K Nearest Neighbors: Results and Explanation</h2>
                         <p class="lead">K Nearest Neighbors looks at data points in the testing set and infers the classification based on similarity to other points of the same class in the training set.(Are we using this model?)</p>
                         <img src="assets/img/KNN.jpg" class="page-image" width="500"/>
                     </div>
                     <div class="col-lg-8">
-                        <h2>K Nearest Neighbors: Results </h2>
-                        <p class="lead">Looking at our confusion matrix below, K Nearest Neighbors performed well on very wealthy and very poor nations.(Explanations) </p>
-                        <iframe width="500" height="500" title="KNN Confusion Matrix" src='KNN_CF_matrix.html'></iframe>  
-                        <p class="lead" style="font-family:'Georgia'">Calculations)</p>
+                      <h2>Random Forest Regression: Results and  Explanation<h2>
+                        <p class="lead">The Random Forest Regression model uses multiple decision trees with random decisions to create outputs and trains itself on which ones work. The RMSE we got from the model was 43.8 which is pretty good but not the best we got from any of the models.</p>
+                        <img src="assets/img/RandomForestR.png" class="page-image" />
+                    </div>
+                    <div class="col-lg-8">
+                      <h2>LightGBM: Results and  Explanation<h2>
+                        <p class="lead">The Light Gradient Boosting Machine model also known as LightBGM, is very similar to the random forest regression model except it uses the outputs of its trees for inputs of other trees. Its RMSE was 44 which isn't terrible, but we had better RMSEs from other models.</p>
+                        <img src="assets/img/Light GBM.png" class="page-image" />
                     </div>
                 </div>
             </div>
